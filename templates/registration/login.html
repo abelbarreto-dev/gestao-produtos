@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %}Entrar{% endblock %}
+
+{% block main %}
+<!--
+    Página de Login principal.
+    abelbcarvalho
+-->
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <h2>Gestão Produtos - Entrar</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|bootstrap }}
+                <button type="submit" class="btn btn-success">Entrar</button>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer mt-auto py-3 bg-light low-footer-now">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento Web Django 3.14</span>
+        </div>
+    </footer>
+{% endblock %}

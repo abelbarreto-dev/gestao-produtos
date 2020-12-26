@@ -1,0 +1,9 @@
+/** css default file = abelbcarvalho */
+.low-footer-now {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.trash-item {
+    float: right;
+}

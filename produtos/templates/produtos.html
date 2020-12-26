@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Produtos{% endblock %}
+
+{% block main %}
+<!--
+    Esse arquivo trabalha com a listagem de todos os produtos!
+    abelbcarvalho
+-->
+<div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+        <h2>Produtos Cadastrados</h2> <br>
+
+        <ul class="list-group">
+            {% for produto in produtos %}
+                <li class="list-group-item">
+                    <a href="{% url 'produtos_update' produto.id %}">{{ produto }}</a>
+                    <a href="{% url 'produtos_delete' produto.id %}" class="trash-item">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col">
+        {% if user.is_authenticated %}
+            <p>
+                Olá, {{user.username}}!
+                <a href="{% url 'logout' %}"><span class="badge badge-dark">Sair</span></a>
+            </p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer mt-auto py-3 bg-light low-footer-now">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento Web Django 3.14</span>
+        </div>
+    </footer>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Person{% endblock %}
+
+{% block main%}
+
+    <h1>Tem certeza que deseja deletar {{ produto.name }}?</h1>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Deletar</button>
+    </form>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer mt-auto py-3 bg-light low-footer-now">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento Web Django 3.14</span>
+        </div>
+    </footer>
+{% endblock %}
